@@ -17,13 +17,7 @@ namespace TextFileChallenge
         {
             get
             {
-                string aliveStatus = "is dead";
-
-                if (IsAlive == true)
-                {
-                    aliveStatus = "is alive";
-                }
-
+                string aliveStatus = (IsAlive) ? "is alive" : "is dead";
                 return $"{ FirstName} { LastName } is { Age } and { aliveStatus }";
             }
         }

@@ -136,6 +136,7 @@
             this.addUserButton.TabIndex = 10;
             this.addUserButton.Text = "Add User";
             this.addUserButton.UseVisualStyleBackColor = true;
+            this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
             // 
             // saveListButton
             // 
@@ -145,6 +146,7 @@
             this.saveListButton.TabIndex = 11;
             this.saveListButton.Text = "Save List";
             this.saveListButton.UseVisualStyleBackColor = true;
+            this.saveListButton.Click += new System.EventHandler(this.saveListButton_Click);
             // 
             // ChallengeForm
             // 
