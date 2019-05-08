@@ -48,6 +48,15 @@ namespace TextFileChallenge
 
         private void saveListButton_Click(object sender, EventArgs e)
         {
+            using (var writer = new StreamWriter("AdvancedDataSet.csv"))
+            {
+                writer.WriteLine("Age,LastName,IsAlive,FirstName");
+                foreach (var user in users)
+                {
+                    var alive = (user.IsAlive) ? 1 : 0;
+                    writer.WriteLine($"{user.Age},{user.LastName},{alive},{user.FirstName}");
+                }
+            }
 
         }
 
@@ -62,7 +71,7 @@ namespace TextFileChallenge
                     var lineValues = line.Split(',');
                     if (passedFirstLine)
                     {
-                        var isAliveFlag = (int.Parse(lineValues[2]) == 0) ? true : false;
+                        var isAliveFlag = (int.Parse(lineValues[2]) == 0) ? false : true;
                         var myUser = new UserModel()
                         {
                             Age = int.Parse(lineValues[0]),
